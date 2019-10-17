@@ -1,4 +1,7 @@
 # A2: Bias in Data
+Ishna Kaul
+16th October, 2019
+
 ## Goal
 This project is the second assignment of the DATA 512 Human_centred Data Science course. This assignment aims to study bias in data by looking at Wikipedia articles of politicians from different countries. The goal is to gain a better understanding of biases in data and its consequences. The analysis calculates the following metrics for each country from Wikipedia articles of their political figures:
 
@@ -30,9 +33,12 @@ We define "high-quality" as an article predicted to be either FA or GA.
 
 4. Code blocks and conceptualization of this repository has been inspired by the assignment: https://wiki.communitydata.science/Human_Centered_Data_Science_(Fall_2019)/Assignments#Scheduled_assignments
 
-## Libraries and APIs
+## Resources used
 
-This analysis was done using Python 3.6 running in a Jupyter Notebook. Python packages used were pandas, matplotlib.pyplot and ores. You can pip install ores in your local notebook environment (https://github.com/wikimedia/ores)
+This analysis was done using Python 3.6 running in a Jupyter Notebook. Documentation for Python can be found here: https://docs.python.org/3.5/
+Documentation for Jupyter Notebook can be found here: http://jupyter-notebook.readthedocs.io/en/latest/
+
+Python packages used were pandas, matplotlib.pyplot and ores. You can pip install ores in your local notebook environment (https://github.com/wikimedia/ores)
 
 Object Revision Evaluation Service (ORES) was used to obtain the article quality feature. The documentation for using this API can be found here: https://github.com/wikimedia/ores.
 
@@ -40,6 +46,11 @@ The API call function in the iPython notebook used a code block from: https://wi
 
 ## Output
 
+1. Two source data files:
+- page_data: This dataset contains the country, revision ID and names of each politician wikipedia article. 
+- WPDS_2018_data: The dataset contains the country name and population of that country.
+
+2. Final data file in CSV format that contains all articles you analyzed, the corresponding country and population, and their predicted quality score.
 The final format of the file "Final_combined_data.csv" is given below:
 
 | country       | GA_FA          | revision_id  | article_quality | page| Population mid-2018 (millions) | frequency	| articles-per-population-percentage	| high-quality-percentage
@@ -56,6 +67,14 @@ articles-per-population-percentage: frequency by population percentage
 high-quality-percentage: GA_FA by frequency percentage
 
 PLEASE NOTE: This notebook does not consist of the regional analysis. That has been stored seperately in the tables given in the jupyter notebook
+
+3. Jupyter notebook named hcds-a2-bias that contains all code as well as information necessary to understand each programming step. It has 6 tables in the Result section with following information:
+- Top 10 countries by coverage: 10 highest-ranked countries in terms of number of politician articles as a proportion of country population
+- Bottom 10 countries by coverage: 10 lowest-ranked countries in terms of number of politician articles as a proportion of country population
+- Top 10 countries by relative quality: 10 highest-ranked countries in terms of the relative proportion of politician articles that are of GA and FA-quality
+- Bottom 10 countries by relative quality: 10 lowest-ranked countries in terms of the relative proportion of politician articles that are of GA and FA-quality
+- Geographic regions by coverage: Ranking of geographic regions (in descending order) in terms of the total count of politician articles from countries in each region as a proportion of total regional population
+- Geographic regions by coverage: Ranking of geographic regions (in descending order) in terms of the relative proportion of politician articles from countries in each region that are of GA and FA-quality
 
 ## Using the repository
 1. Clone the repo.
